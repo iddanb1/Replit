@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Warm, welcoming palette */
+  /* Primary: Deep Warm Blue */
+  --primary: 215 50% 23%;
+  --primary-foreground: 210 40% 98%;
+
+  /* Secondary: Soft Gold/Sand */
+  --secondary: 35 30% 90%;
+  --secondary-foreground: 215 50% 23%;
+
+  /* Accent: Muted Terracotta */
+  --accent: 14 60% 60%;
+  --accent-foreground: 210 40% 98%;
+
+  /* Backgrounds */
+  --background: 35 20% 98%; /* Warm white */
+  --foreground: 215 25% 20%; /* Dark charcoal */
+  
+  --muted: 35 15% 94%;
+  --muted-foreground: 215 15% 45%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 215 25% 20%;
+
+  --border: 35 15% 85%;
+  --input: 35 15% 85%;
+  --ring: 215 50% 23%;
+
+  --radius: 0.75rem;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight font-semibold;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full hover:bg-primary/40 transition-colors;
+}
